@@ -61,8 +61,43 @@ public void testNewArrayList() {
             // Expected result
         }
     }
-    ```
+    
+  ```
     
     Here is a test I found in the Apache Common Collections. It could be better to replace fail() by Assert.fail()
+    
+    ```
+     public void testPushPeekPop() {
+        final ArrayStack<E> stack = makeObject();
+
+        stack.push((E) "First Item");
+        assertFalse("Stack is not empty", stack.empty());
+        assertEquals("Stack size is one", 1, stack.size());
+        assertEquals("Top item is 'First Item'",
+                     "First Item", (String) stack.peek());
+        assertEquals("Stack size is one", 1, stack.size());
+
+        stack.push((E) "Second Item");
+        assertEquals("Stack size is two", 2, stack.size());
+        assertEquals("Top item is 'Second Item'",
+                     "Second Item", (String) stack.peek());
+        assertEquals("Stack size is two", 2, stack.size());
+
+        assertEquals("Popped item is 'Second Item'",
+                     "Second Item", (String) stack.pop());
+        assertEquals("Top item is 'First Item'",
+                     "First Item", (String) stack.peek());
+        assertEquals("Stack size is one", 1, stack.size());
+
+        assertEquals("Popped item is 'First Item'",
+                     "First Item", (String) stack.pop());
+        assertEquals("Stack size is zero", 0, stack.size());
+
+    }
+    
+    ```
+    
+    Here is another example of test I found in the Apache Common Collections, the piggybacj is not respected there is too many assert in only one method. It could be divided at least in two tests with test on push and peek pop.
+    
     
     
