@@ -14,17 +14,18 @@ Answer the following questions:
 
 1. The assertTrue assertion is not well used. You should declare variables and then assert the are true or not.
 
-`
+```
 public int a = 3;
 public int b = 0.4;
 public int c = a*b;
 assertTrue(c, 1.2);
-`
+``` 
 2. AssetEquals checks if two given objects are equal. AssertSame verifies if two objects are the same and they can be not equal but it is the same object.
 
 3. Here is an example of "fail" found here (https://www.javaguides.net/2018/08/junit-assertfail-method-example.html#:~:text=The%20fail%20assertion%20fails%20a,test%20failing%20during%20its%20development.&text=In%20JUnit%205%20all%20JUnit%204%20assertion%20methods%20are%20moved%20to%20org.) :
 
-`import static org.junit.Assert.assertTrue;
+``` 
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 public class AssertFailExample {
@@ -51,7 +52,7 @@ public class AssertFailExample {
      }
    } 
 }
-`
+``` 
 I have add a Assert.fail() assertion that could be done instead of the fail message.
 
 4. It is to test boundaries of the programs. It can cover the wrong use of the program and verify that the wrong use of the program throw an exception. It can be used for NullPointerException for example.
