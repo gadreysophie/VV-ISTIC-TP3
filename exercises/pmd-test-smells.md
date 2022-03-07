@@ -41,3 +41,28 @@ UseAssertTrueInsteadOfAssertEquals
 = interacting tests and fragile test
 
 JUnitStaticSuite = Testing private methods or X-Ray specs
+
+
+ 
+### Discuss the test smell you found with the help of PMD and propose here an improvement. Include the improved test code in this file.
+
+
+```
+public void testNewArrayList() {
+        final ArrayList<E> list = makeObject();
+        assertTrue("New list is empty", list.isEmpty());
+        assertEquals("New list has size zero", 0, list.size());
+
+        try {
+            list.get(1);
+            Assert.fail(("get(int i) should have thrown IndexOutOfBoundsException");
+            //fail("get(int i) should have thrown IndexOutOfBoundsException");
+        } catch (final IndexOutOfBoundsException e) {
+            // Expected result
+        }
+    }
+    ```
+    
+    Here is a test I found in the Apache Common Collections. It could be better to replace fail() by Assert.fail()
+    
+    
