@@ -46,6 +46,7 @@ JUnitStaticSuite = Testing private methods or X-Ray specs
  
 ### Discuss the test smell you found with the help of PMD and propose here an improvement. Include the improved test code in this file.
 
+ Here is a test I found in the Apache Common Collections. It could be better to replace fail() by Assert.fail()
 
 ```
 public void testNewArrayList() {
@@ -64,7 +65,7 @@ public void testNewArrayList() {
     
   ```
     
-    Here is a test I found in the Apache Common Collections. It could be better to replace fail() by Assert.fail()
+   
     
     ```
      public void testPushPeekPop() {
