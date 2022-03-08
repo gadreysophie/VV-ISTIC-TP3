@@ -26,3 +26,14 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 
 ## Answer
 
+1. I use the input space partitioning technic to desing some tests, here is a table of what I did :
+
+| Characteristics | Block 1 | Block 2 | Block 2 |
+| -------- | -------- | -------- | -------- |
+| {}     | 0    | 1     | > 1     |
+| () | 0 | 1 |  1 |
+| []     | 0    | 1     | > 1     |
+
+2. With the help of the IDE, I reached a coverage of 100% and 68% of lines coverered.
+3. I tried to respect the Base Choice Coverage (BCC) which is a base choice that is chosen for each partition or characteristic. A base test is formed with the base choice for each partition. I tried to respect this principle by separating of block of tests.
+4. 
