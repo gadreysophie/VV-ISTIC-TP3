@@ -31,7 +31,7 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 | Characteristics | Block 1 | Block 2 | Block 2 |
 | -------- | -------- | -------- | -------- |
 | {}     | 0    | 1     | > 1     |
-| () | 0 | 1 |  1 |
+| () | 0 | 1 |  > 1 |
 | []     | 0    | 1     | > 1     |
 
 2. With the help of the IDE, I reached a coverage of 100% and 68% of lines coverered.
