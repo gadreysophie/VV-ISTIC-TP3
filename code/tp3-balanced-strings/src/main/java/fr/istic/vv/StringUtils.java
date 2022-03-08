@@ -5,7 +5,9 @@ import java.util.Stack;
 
 public class StringUtils {
 
-    private StringUtils() {}
+
+    public StringUtils() {
+    }
 /*
     public static boolean isBalanced(String str) {
         HashMap<Character, Character> bracketMap = new HashMap<>();
@@ -34,7 +36,7 @@ public class StringUtils {
  */
 
     public static boolean isBalanced(String str) {
-        Stack<Character> S = new Stack<Character>();
+        Stack<Character> S = new Stack<>();
         for(int a = 0; a < str.length(); a++){
             char let = str.charAt(a);
             if(let == '[' || let == '{' || let == '(')
