@@ -33,6 +33,12 @@ class BinaryHeapTest {
         assertEquals(1,binaryHeap.count());
     }
 
-
+    @Test
+    @DisplayName("test sur le remove")
+    void testRemove(){
+        binaryHeap.push(element);
+        binaryHeap.pop();
+        assertEquals(0,binaryHeap.count());
+    }
 
 }
