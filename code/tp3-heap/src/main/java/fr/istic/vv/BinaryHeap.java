@@ -30,7 +30,7 @@ class BinaryHeap<T> {
     }
 
     public int count() {
-        return countNode();
+        return countNode(root);
     }
 
 
@@ -87,6 +87,10 @@ class BinaryHeap<T> {
      * @param element élément à ajouter au graphe
      */
     private void add (T element) {
+        if(root==null){
+            root = new Noeud(element);
+            return;
+        }
         List<Noeud> noeuds = new ArrayList<>();
         int index = 0;
         noeuds.add(root);
@@ -127,7 +131,16 @@ class BinaryHeap<T> {
      * Pour compter le nombre de noeuds en  parcourant dans la largeur le graphe
      * @return le nombre de noeud du graphe
      */
-    private int countNode(){
+    private int countNode(Noeud n) {
+        if (n == null) return 0;
+        int left = countNode(n.lhs);
+        int right = countNode(n.rhs);
+        return left + right + 1;
+    }
+
+
+
+       /*
         List<Noeud> noeuds = new ArrayList<>();
         int index = 1;
         noeuds.add(root);
@@ -151,6 +164,8 @@ class BinaryHeap<T> {
         return index;
     }
 
+
+        */
 /*
     private void add2 (Noeud child) {
         while((0 < comparator.compare(root.lhs.value, child.value)) &
