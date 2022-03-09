@@ -26,4 +26,13 @@ class BinaryHeapTest {
         binaryHeap.push(element);
     }
 
+    @Test
+    @DisplayName("test sur le nombre de noeuds du graphe")
+    void testCountNode(){
+        binaryHeap.push(element);
+        assertEquals(1,binaryHeap.count());
+    }
+
+
+
 }
