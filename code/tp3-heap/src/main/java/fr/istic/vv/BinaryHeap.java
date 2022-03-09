@@ -81,7 +81,6 @@ class BinaryHeap<T> {
     }
 
 
-
     /**
      * Pour faire le parcours en largeur du graphe et retrouver les valeurs des noeuds
      * et ajouter l'élément de façon à avoir un graphe trié
@@ -124,10 +123,13 @@ class BinaryHeap<T> {
         }
     }
 
-
+    /**
+     * Pour compter le nombre de noeuds en  parcourant dans la largeur le graphe
+     * @return le nombre de noeud du graphe
+     */
     private int countNode(){
         List<Noeud> noeuds = new ArrayList<>();
-        int index = 0;
+        int index = 1;
         noeuds.add(root);
         while (true) {
             Noeud n = noeuds.get(0);
