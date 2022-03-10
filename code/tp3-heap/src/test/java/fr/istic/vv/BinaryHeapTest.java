@@ -41,4 +41,20 @@ class BinaryHeapTest {
         assertEquals(0,binaryHeap.count());
     }
 
+    @Test
+    @DisplayName("test sur la méthode peek")
+    void testPeek(){
+        binaryHeap.push(element);
+        assertEquals(element,binaryHeap.peek());
+    }
+
+    @Test
+    @DisplayName("test sur la méthode pop")
+    void testPop(){
+        binaryHeap.push(element);
+        int element1 = binaryHeap.pop();
+        assertEquals(element,element1);
+    }
+
+
 }

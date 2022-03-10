@@ -89,41 +89,42 @@ class BinaryHeap<T> {
     private void add (T element) {
         if(root==null){
             root = new Noeud(element);
-            return;
         }
-        List<Noeud> noeuds = new ArrayList<>();
-        int index = 0;
-        noeuds.add(root);
-        while (true) {
-            Noeud n = noeuds.get(0);
-            if (n.lhs == null) {
-                n.lhs = new Noeud(element);
-                noeuds.add(n.lhs);
-                break;
-            } else if (n.rhs == null) {
-                n.rhs = new Noeud(element);
-                noeuds.add(n.rhs);
-                break;
-            } else {
-                noeuds.add(n.lhs);
-                noeuds.add(n.rhs);
-                index++;
+        else {
+            List<Noeud> noeuds = new ArrayList<>();
+            int index = 0;
+            noeuds.add(root);
+            while (true) {
+                Noeud n = noeuds.get(0);
+                if (n.lhs == null) {
+                    n.lhs = new Noeud(element);
+                    noeuds.add(n.lhs);
+                    break;
+                } else if (n.rhs == null) {
+                    n.rhs = new Noeud(element);
+                    noeuds.add(n.rhs);
+                    break;
+                } else {
+                    noeuds.add(n.lhs);
+                    noeuds.add(n.rhs);
+                    index++;
+                }
+
             }
+            index = noeuds.size() - 1;
+            Noeud n = noeuds.get(index);
+            Noeud parent = noeuds.get((index - 1) / 2);
+            while (index > 0 && 0 > comparator.compare(n.value, parent.value)) {
 
-        }
-        index = noeuds.size() - 1;
-        Noeud n = noeuds.get(index);
-        Noeud parent = noeuds.get ((index-1)/2);
-        while(index > 0 && 0 > comparator.compare(n.value, parent.value)){
+                //invert
+                T temp = n.value;
+                n.value = parent.value;
+                parent.value = temp;
 
-            //invert
-            T temp = n.value;
-            n.value = parent.value ;
-            parent.value = temp;
-
-            //reverse index
-            noeuds.set((index-1)/2, n);
-            noeuds.set(index, parent);
+                //reverse index
+                noeuds.set((index - 1) / 2, n);
+                noeuds.set(index, parent);
+            }
         }
     }
 
