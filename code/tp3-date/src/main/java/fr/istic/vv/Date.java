@@ -6,26 +6,30 @@ import java.util.Calendar;
 class Date implements Comparable<Date> {
 
     Date date;
-    int dateDay;
-    int dateMonth;
-    int dateYear;
+    int day;
+    int month;
+    int year;
 
 
     public Date(int day, int month, int year) {
-        day = dateDay;
-        month = dateMonth;
-        year = dateYear;
+        day = day;
+        month = month;
+        year = year;
         date = new Date (day, month, year);
     }
 
+    public Date(){
+
+    }
+
     public int getDateDay(){
-        return dateDay;
+        return day;
     }
     public int getDateMonth(){
-        return dateMonth;
+        return month;
     }
     public int getDateYear(){
-        return dateYear;
+        return year;
     }
 
     public static boolean isValidDate(int day, int month, int year) {
