@@ -41,7 +41,7 @@ class DateTest {
     void testCompareDate() {
         Date date1 = new Date(day,month,year);
         Date date2 = new Date(day,month,year);
-        assertEquals(1, date1.compareTo(date2));
+        assertEquals(0, date1.compareTo(date2));
     }
 
 
