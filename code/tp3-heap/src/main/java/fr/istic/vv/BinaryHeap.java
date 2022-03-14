@@ -43,6 +43,7 @@ class BinaryHeap<T> {
         Noeud rhs;
 
         public Noeud (T element){
+            value = element;
         }
 
         public Noeud(){
