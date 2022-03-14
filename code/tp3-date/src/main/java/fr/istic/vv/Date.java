@@ -12,32 +12,36 @@ class Date implements Comparable<Date> {
 
 
     public Date(int day, int month, int year) {
-        day = day;
-        month = month;
-        year = year;
+        this.day = day;
+        this.month = month;
+        this.year = year;
         date = new java.util.Date(day, month, year);
     }
 
-    public Date(){
+    public Date() {
 
     }
 
-    public int getDateDay(){
+    public int getDateDay() {
         return day;
     }
-    public int getDateMonth(){
+
+    public int getDateMonth() {
         return month;
     }
-    public int getDateYear(){
+
+    public int getDateYear() {
         return year;
     }
 
     public static boolean isValidDate(int day, int month, int year) {
 
-        if (day <= 0 || month <= 0 || year <= 0){
-            return false;}
-        if (month > 12 || day > 31){
-            return false;}
+        if (day <= 0 || month <= 0 || year <= 0) {
+            return false;
+        }
+        if (month > 12 || day > 31) {
+            return false;
+        }
 
         Calendar cal = Calendar.getInstance();
         cal.set(Calendar.YEAR, year);
@@ -52,7 +56,7 @@ class Date implements Comparable<Date> {
     }
 
     public static boolean isLeapYear(int year) {
-        return year % 400 == 0 || ( year % 4 == 0 && year % 100 != 0 );
+        return year % 400 == 0 || (year % 4 == 0 && year % 100 != 0);
     }
 
     public Date nextDate() {
@@ -62,12 +66,10 @@ class Date implements Comparable<Date> {
         Date nextDate;
         if (isValidDate(nextDay, month, year)) {
             return nextDate = new Date(nextDay, month, year);
-        }
-        else if (isValidDate(day, nextMonth, year)){
-            return nextDate = new Date(day, nextMonth, year);
-        }
-        else {
-            return nextDate = new Date(day, month, nextYear);
+        } else if (isValidDate(day, nextMonth, year)) {
+            return nextDate = new Date(1, nextMonth, year);
+        } else {
+            return nextDate = new Date(1, 1, nextYear);
         }
     }
 
@@ -75,19 +77,31 @@ class Date implements Comparable<Date> {
         int previousDay = getDateDay() - 1;
         int previousMonth = getDateMonth() - 1;
         int previousYear = getDateYear() - 1;
-        Date previousDate;
         if (isValidDate(previousDay, month, year)) {
-            return previousDate = new Date(previousDay, month, year);
+            return new Date(previousDay, month, year);
+        } else if (isValidDate(day, previousMonth, year)) {
+            if (isValidDate(31,previousMonth,year)){
+                return new Date(31, previousMonth, year);
+            }
+            else if (isValidDate(30,previousMonth,year)){
+                return new Date(30, previousMonth, year);
+            }
+            else if (isValidDate(29,previousMonth,year)){
+                return new Date(29, previousMonth, year);
+            }
+            else return new Date(28, previousMonth, year);
+        } else {
+            return new Date(28, 12, previousYear);
         }
-        else if (isValidDate(day, previousMonth, year)){
-            return previousDate = new Date(day, previousMonth, year);
-        }
-        else {
-            return previousDate = new Date(day, month, previousYear);
-        } }
-
-    public int compareTo(Date other) {
-     return other.date.compareTo(this.date);
     }
 
+    public int compareTo(Date other) {
+        return other.date.compareTo(this.date);
+    }
+
+    public boolean equals(Object other) {
+        if (other instanceof Date) {
+            return compareTo((Date) other) == 0;
+        } else return false;
+    }
 }
