@@ -109,13 +109,13 @@ class BinaryHeap<T> {
                     noeuds.add(n.lhs);
                     noeuds.add(n.rhs);
                     index++;
+                    break;
                 }
-
             }
             index = noeuds.size() - 1;
             Noeud n = noeuds.get(index);
             Noeud parent = noeuds.get((index - 1) / 2);
-            while (index > 0 && 0 > comparator.compare(n.value, parent.value)) {
+            while (0 > comparator.compare(n.value, parent.value)) {
 
                 //invert
                 T temp = n.value;
@@ -139,56 +139,4 @@ class BinaryHeap<T> {
         int right = countNode(n.rhs);
         return left + right + 1;
     }
-
-
-
-       /*
-        List<Noeud> noeuds = new ArrayList<>();
-        int index = 1;
-        noeuds.add(root);
-        while (true) {
-            Noeud n = noeuds.get(0);
-            if (n.lhs == null) {
-                n.lhs = new Noeud();
-                noeuds.add(n.lhs);
-                break;
-            } else if (n.rhs == null) {
-                n.rhs = new Noeud();
-                noeuds.add(n.rhs);
-                break;
-            } else {
-                noeuds.add(n.lhs);
-                noeuds.add(n.rhs);
-                index++;
-            }
-
-        }
-        return index;
-    }
-
-
-        */
-/*
-    private void add2 (Noeud child) {
-        while((0 < comparator.compare(root.lhs.value, child.value)) &
-                (0 < comparator.compare(root.rhs.value, child.value)) ) {
-            if (root.lhs == null) {
-                root.lhs = child;
-                add(child);
-            } else if (root.rhs == null) {
-                root.rhs = child;
-                add(child);
-            } else {
-                if (0 < comparator.compare(root.lhs.value, root.rhs.value)) {
-                    Noeud rhs = root.rhs;
-                    rhs.rhs = child;
-                    add(child);
-                }
-            }
-        }
-    }
-
- */
-
-
 }

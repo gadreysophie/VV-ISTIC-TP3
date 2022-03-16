@@ -16,6 +16,7 @@ class BinaryHeapTest {
 
     @BeforeEach
     void init(){
+        comparator = (o1, o2) -> 0;
         binaryHeap = new BinaryHeap<>(comparator);
         element = 1;
     }
@@ -53,6 +54,28 @@ class BinaryHeapTest {
     void testPop(){
         binaryHeap.push(element);
         int element1 = binaryHeap.pop();
+        assertEquals(element,element1);
+    }
+
+    @Test
+    @DisplayName("test sur la méthode pop avec plusieurs éléments")
+    void testMultiplePop(){
+        binaryHeap.push(element);
+        binaryHeap.push(3);
+        binaryHeap.push(5);
+        binaryHeap.push(3);
+        int element1 = binaryHeap.pop();
+        assertEquals(element,element1);
+    }
+
+    @Test
+    @DisplayName("test sur la méthode peek avec plusieurs éléments")
+    void testMultiplePeek(){
+        binaryHeap.push(element);
+        binaryHeap.push(3);
+        binaryHeap.push(5);
+        binaryHeap.push(3);
+        int element1 = binaryHeap.peek();
         assertEquals(element,element1);
     }
 
