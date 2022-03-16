@@ -32,6 +32,8 @@ class BinaryHeapTest {
     void testCountNode(){
         binaryHeap.push(element);
         assertEquals(1,binaryHeap.count());
+        binaryHeap.push(element);
+        assertEquals(2, binaryHeap.count());
     }
 
     @Test
