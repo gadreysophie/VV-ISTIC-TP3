@@ -53,3 +53,11 @@ Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 
 ## Answer
 
+1. 
+| Characteristics | Blocks                                |                            |
+| --------------- | ------------------------------------- | -------------------------- |
+| nextDate        | day {28, 29, 30, 31}, month {2, 3, 4} | day {1, 31}, month {1, 12} |
+| previousDate    | day {28, 29, 30, 31}, month {2, 3, 4} | day {1, 31}, month {1, 12} |
+| isLeapYear| day {28, 29}, month 2| year 2020, 2021                            |
+| isValidDate     | day <= 0, month <= 0, year <= 0       | month > 12, day > 31       |
+
