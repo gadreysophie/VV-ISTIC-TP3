@@ -91,7 +91,7 @@ class Date implements Comparable<Date> {
             }
             else return new Date(28, previousMonth, year);
         } else {
-            return new Date(28, 12, previousYear);
+            return new Date(31, 12, previousYear);
         }
     }
 
