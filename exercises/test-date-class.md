@@ -53,3 +53,18 @@ Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 
 ## Answer
 
+1. I use the input space partitioning technic to desing some tests, here is a table of what I did :
+
+
+| Characteristics | Blocks                                |                            |
+| --------------- | ------------------------------------- | -------------------------- |
+| nextDate        | day {28, 29, 30, 31}, month {2, 3, 4} | day {1, 31}, month {1, 12} |
+| previousDate    | day {28, 29, 30, 31}, month {2, 3, 4} | day {1, 31}, month {1, 12} |
+| isLeapYear| day {28, 29}, month 2| year 2020, 2021                            |
+| isValidDate     | day <= 0, month <= 0, year <= 0       | month > 12, day > 31       |
+
+2. With the help of the IDE, I reached a coverage of 100% of class and 87% of lines coverered.
+
+3. I tried to respect the Base Choice Coverage (BCC) which is a base choice that is chosen for each partition or characteristic. A base test is formed with the base choice for each partition. I tried to respect this principle by separating of block of tests.
+
+
