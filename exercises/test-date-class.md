@@ -54,6 +54,8 @@ Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 ## Answer
 
 1. I use the input space partitioning technic to desing some tests, here is a table of what I did :
+
+
 | Characteristics | Blocks                                |                            |
 | --------------- | ------------------------------------- | -------------------------- |
 | nextDate        | day {28, 29, 30, 31}, month {2, 3, 4} | day {1, 31}, month {1, 12} |
