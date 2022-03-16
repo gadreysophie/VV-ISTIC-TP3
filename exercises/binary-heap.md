@@ -40,3 +40,17 @@ Use the following steps to design the test suite:
 Use the project in [tp3-heap](../code/tp3-heap) to complete this exercise.
 
 ## Answer
+
+1.
+
+| Characteristics | Blocks            |                  |
+| -------- | ------------------- | ------------------------ |
+| peek         |           one element in tree          |  several elements in tree                        | 
+| pop      | one element in tree | several elements in tree |
+| count      | one element in tree | several elements in tree |
+| push      | one element in tree | several elements in tree |
+
+2. With the help of the IDE, I reached a coverage of 100% and 76% of lines coverered.
+
+3. I tried to respect the Base Choice Coverage (BCC) which is a base choice that is chosen for each partition or characteristic. A base test is formed with the base choice for each partition. I tried to respect this principle by separating of block of tests.
+
