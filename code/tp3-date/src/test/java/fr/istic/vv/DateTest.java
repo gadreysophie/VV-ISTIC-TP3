@@ -30,6 +30,14 @@ class DateTest {
         assertTrue(isValidDate(day,month,year));
     }
 
+
+    @Test
+    @DisplayName("date non valide")
+    void testIsNotValideDate(){
+        assertFalse(isValidDate(32,13,2020));
+        assertFalse(isValidDate(-1,-1,2020));
+    }
+
     @Test
     @DisplayName("leap year")
     void testLeapYear(){
